@@ -62,7 +62,7 @@ OP_ENDIF
 ```
 
 ###MIN SCORE END
-Pass the transaction if the score tally on altstack is high enough.
+Use this after all verification modules are done. Pull the score from altstack, compare it to the threshold, and pass/fail the transaction depending on that result.
 ```
 OP_FROMALTSTACK <minweight> OP_GREATERTHANOREQUAL OP_VERIFY
 ```
