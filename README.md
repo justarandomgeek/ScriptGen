@@ -81,6 +81,20 @@ OP_ENDIF
 TODO
 ```
 
+###CONTENT WEIGHTED HASH
+Award points for providing content that hashes to a given hash.
+```
+// <pass> or 0 on stack
+OP_IFDUP OP_IF 
+OP_HASH160 <hash> OP_EQUALVERIFY 
+OP_FROMALTSTACK <weight> OP_ADD OP_TOALTSTACK 
+OP_ENDIF
+```
+
+```
+7363a9<hash>886c<weight>936b68
+```
+
 ###MIN SCORE END
 Use this after all verification modules are done. Pull the score from altstack, compare it to the threshold, and pass/fail the transaction depending on that result.
 ```
