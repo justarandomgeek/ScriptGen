@@ -59,7 +59,7 @@ OP_ENDIF
 ```
 
 ###MULTISIG WEIGHTED SIG GROUP (points-per-group)
-Multisig with number of sigs from stack, pubkeys and num pubkeys embedded. Pass/fail, fixed number of points for the group.
+Multisig with number of sigs, pubkeys and num pubkeys embedded. Pass/fail, fixed number of points for the group.
 ```
 //  X <sig> ... <sig> or 0 on stack
 OP_IFDUP OP_IF 
