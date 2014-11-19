@@ -40,7 +40,7 @@ OP_ENDIF
 736376a9<pubkeyhash>88ad6c<weight>936b68
 ```
 
-###MULTISIG WEIGHTED SIG GROUP
+###MULTISIG WEIGHTED SIG GROUP (points-per-sig)
 Multisig with number of sigs from stack, pubkeys and num pubkeys embedded. Multiply number of sigs by weight, and add to tally on altstack.
 ```
 //  X <sig> ... <sig> <nSigs> or 0 on stack
@@ -56,6 +56,17 @@ OP_ENDIF
 
 ```
 7363766b <pubkey> ... <pubkey> <nKeys> af6c <multiplier> 6c936b68
+```
+
+###MULTISIG WEIGHTED SIG GROUP (points-per-group)
+Multisig with number of sigs from stack, pubkeys and num pubkeys embedded. Pass/fail, fixed number of points for the group.
+```
+//  X <sig> ... <sig> or 0 on stack
+OP_IFDUP OP_IF 
+<nSigs> <pubkey> ... <pubkey> <nKeys>
+OP_CHECKMULTISIGVERIFY
+OP_FROMALTSTACK <weight> OP_ADD OP_TOALTSTACK
+OP_ENDIF
 ```
 
 ###MULTISIG PUBKEY HASH WEIGHTED SIG GROUP
