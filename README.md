@@ -109,7 +109,7 @@ OP_ENDIF
 ###MIN SCORE END
 Use this after all verification modules are done. Pull the score from altstack, compare it to the threshold, and pass/fail the transaction depending on that result.
 ```
-OP_FROMALTSTACK <minweight> OP_GREATERTHANOREQUAL OP_VERIFY
+OP_FROMALTSTACK <minweight> OP_GREATERTHANOREQUAL
 ```
 
 ```
